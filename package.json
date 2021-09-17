@@ -1,0 +1,23 @@
+{
+  "name": "scraping",
+  "author": "Alan Alves <alan86alves@gmail.com>",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^3.0.2",
+    "delay": "^5.0.0",
+    "delayed-loop": "^1.0.1",
+    "fast-csv": "^4.3.6",
+    "got": "^11.8.2",
+    "moment": "^2.29.1",
+    "pg": "^8.7.1",
+    "playwright": "^1.14.1",
+    "puppet": "^1.5.0",
+    "remove-accents": "^0.4.2",
+    "slug": "^5.1.0"
+  },
+  "devDependencies": {
+    "prisma": "^3.0.2"
+  }
+}
