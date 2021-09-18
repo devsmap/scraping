@@ -27,7 +27,7 @@ fs.createReadStream('seeds/csv/states.csv')
       let uule_name = state.name + ', ' + state.country_name 
       // let encode_uule = ("w+CAIQICI"+SPECIAL_KEY_TABLE[uule_name.length]+Buffer.from(uule_name).toString('base64')).replaceAll(/[=]/g, '')
             
-      console.log(("w+CAIQICI"+SPECIAL_KEY_TABLE[uule_name.length]+Buffer.from(uule_name).toString('base64')));
+      console.log(("w+CAIQICI"+SPECIAL_KEY_TABLE[uule_name.length]+Buffer.from(uule_name).toString('base64')).replaceAll(/[=]/g, ''));
       // const upsertCountry = await prisma.states.upsert({
       //   where: {
       //     id: parseInt(state.id)
