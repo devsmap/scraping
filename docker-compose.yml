@@ -5,7 +5,7 @@ services:
     image: postgres:10
     restart: always
     environment:
-      - POSTGRES_DB=tests
+      - POSTGRES_DB=devsmap_development
       - POSTGRES_USER=prisma
       - POSTGRES_PASSWORD=prisma
     volumes:

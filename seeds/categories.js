@@ -6,7 +6,7 @@ const moment = require('moment');
 
 const categories = [];
 
-fs.createReadStream('seeds/csv/ategories.csv')
+fs.createReadStream('seeds/csv/categories.csv')
   .on('error', () => {
   })
 
@@ -22,19 +22,20 @@ fs.createReadStream('seeds/csv/ategories.csv')
 
   .on('end', () => {
     categories.forEach(async (category) => {
-      const upsertCountry = await prisma.categories.upsert({
-        where: {
-          id: parseInt(category.id)
-        },
-        update: {},
-        create: {
-          id: parseInt(category.id),
-          name: category.name,
-          is_active: true,     
-          created_at: moment().format(), 
-          updated_at: moment().format()
-        }
-      });
+      console.log(category.id);
+      // const upsertCountry = await prisma.categories.upsert({
+      //   where: {
+      //     id: parseInt(category.id)
+      //   },
+      //   update: {},
+      //   create: {
+      //     id: parseInt(category.id),
+      //     name: category.name,
+      //     is_active: true,     
+      //     created_at: moment().format(), 
+      //     updated_at: moment().format()
+      //   }
+      // });
     });
   });
 
