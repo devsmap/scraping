@@ -25,26 +25,27 @@ fs.createReadStream('seeds/csv/states.csv')
   .on('end', () => {
     states.forEach(async (state) => {
       let uule_name = state.name + ', ' + state.country_name 
-      let encode_uule = ("w+CAIQICI"+SPECIAL_KEY_TABLE[uule_name.length]+Buffer.from(uule_name).toString('base64')).replaceAll(/[=]/g, '')
+      // let encode_uule = ("w+CAIQICI"+SPECIAL_KEY_TABLE[uule_name.length]+Buffer.from(uule_name).toString('base64')).replaceAll(/[=]/g, '')
             
-      const upsertCountry = await prisma.states.upsert({
-        where: {
-          id: parseInt(state.id)
-        },
-        update: {},
-        create: {
-          id: parseInt(state.id), 
-          name: state.name, 
-          google_uule: encode_uule, 
-          is_active: true, 
-          is_collected: true,         
-          created_at: moment().format(), 
-          updated_at: moment().format(),
-          countries: {
-            connect: { id: parseInt(state.country_id) }
-          } 
-        }
-      });
+      console.log(("w+CAIQICI"+SPECIAL_KEY_TABLE[uule_name.length]+Buffer.from(uule_name).toString('base64')));
+      // const upsertCountry = await prisma.states.upsert({
+      //   where: {
+      //     id: parseInt(state.id)
+      //   },
+      //   update: {},
+      //   create: {
+      //     id: parseInt(state.id), 
+      //     name: state.name, 
+      //     google_uule: encode_uule, 
+      //     is_active: true, 
+      //     is_collected: true,         
+      //     created_at: moment().format(), 
+      //     updated_at: moment().format(),
+      //     countries: {
+      //       connect: { id: parseInt(state.country_id) }
+      //     } 
+      //   }
+      // });
     });
   });
 
