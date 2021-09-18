@@ -7,27 +7,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model ar_internal_metadata {
-  key        String   @id @db.VarChar
-  value      String?  @db.VarChar
-  created_at DateTime @db.Timestamp(6)
-  updated_at DateTime @db.Timestamp(6)
-}
-
-model categories {
-  id               BigInt       @id @default(autoincrement())
-  name             String       @unique(map: "index_categories_on_name") @db.VarChar
-  parent_id        BigInt?
-  is_active        Boolean?     @default(false)
-  created_at       DateTime     @db.Timestamp(6)
-  updated_at       DateTime     @db.Timestamp(6)
-  categories       categories?  @relation("categoriesTocategories_parent_id", fields: [parent_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_rails_82f48f7407")
-  other_categories categories[] @relation("categoriesTocategories_parent_id")
-  jobs             jobs[]
-
-  @@index([parent_id], map: "index_categories_on_parent_id")
-}
-
 model countries {
   id           BigInt   @id @default(autoincrement())
   is_active    Boolean? @default(false)
@@ -81,11 +60,21 @@ model cities_not_found {
   state_id   BigInt
   name       String   @db.VarChar
   created_at DateTime @db.Timestamp(6)
-
-  @@index([name], map: "index_cities_not_found_on_name")
-  @@index([state_id], map: "index_cities_not_found_on_state_id")
 }
 
+model categories {
+  id               BigInt       @id @default(autoincrement())
+  name             String       @unique(map: "index_categories_on_name") @db.VarChar
+  parent_id        BigInt?
+  is_active        Boolean?     @default(false)
+  created_at       DateTime     @db.Timestamp(6)
+  updated_at       DateTime     @db.Timestamp(6)
+  categories       categories?  @relation("categoriesTocategories_parent_id", fields: [parent_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_rails_82f48f7407")
+  other_categories categories[] @relation("categoriesTocategories_parent_id")
+  jobs             jobs[]
+
+  @@index([parent_id], map: "index_categories_on_parent_id")
+}
 
 model companies {
   id          String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
@@ -96,27 +85,6 @@ model companies {
   updated_at  DateTime  @db.Timestamp(6)
   deleted_at  DateTime? @db.Timestamp(6)
   jobs        jobs[]
-}
-
-model employees {
-  id                     BigInt    @id @default(autoincrement())
-  name                   String
-  email                  String    @unique(map: "index_employees_on_email") @default("") @db.VarChar
-  encrypted_password     String    @default("") @db.VarChar
-  reset_password_token   String?   @unique(map: "index_employees_on_reset_password_token") @db.VarChar
-  reset_password_sent_at DateTime? @db.Timestamp(6)
-  remember_created_at    DateTime? @db.Timestamp(6)
-  sign_in_count          Int       @default(0)
-  current_sign_in_at     DateTime? @db.Timestamp(6)
-  last_sign_in_at        DateTime? @db.Timestamp(6)
-  current_sign_in_ip     String?   @db.VarChar
-  last_sign_in_ip        String?   @db.VarChar
-  confirmation_token     String?   @unique(map: "index_employees_on_confirmation_token") @db.VarChar
-  confirmed_at           DateTime? @db.Timestamp(6)
-  confirmation_sent_at   DateTime? @db.Timestamp(6)
-  unconfirmed_email      String?   @db.VarChar
-  created_at             DateTime  @db.Timestamp(6)
-  updated_at             DateTime  @db.Timestamp(6)
 }
 
 model jobs {
@@ -143,10 +111,6 @@ model jobs {
   @@index([category_id], map: "index_jobs_on_category_id")
   @@index([city_id], map: "index_jobs_on_city_id")
   @@index([company_id], map: "index_jobs_on_company_id")
-}
-
-model schema_migrations {
-  version String @id @db.VarChar
 }
 
 

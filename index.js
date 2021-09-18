@@ -8,19 +8,8 @@ const prisma = new PrismaClient();
 
 (async () => {
 
-  // const browser = await playwright['firefox'].launch({
-  //   proxy: {
-  //     // server: 'proxy.proxy-cheap.com:31112',
-  //     // username: 'ymhvtyf0',
-  //     // password: 'uEgfGdlyHlKKVe9Z'
-  //     // server: 'premium.residential.proxyrack.net:10027',
-  //     // username: '414n-country-FR',
-  //     // password: '19eb6a-780254-eabaf6-a94cb3-65d78d'      
-  //   }    
-  // });
-
   const countries = await prisma.countries.findMany({ where: { is_collected: true } });
-  countries.forEach(async (country) => {
+  countries.forEach(async (country) => {  
     const states = await prisma.states.findMany({ where: { country_id: parseInt(country.id), is_collected: true }, include: { cities: true } });
     const categories = await prisma.categories.findMany({ where: { parent_id: null, is_active: true } });
     states.forEach(async (state, index) => {
@@ -61,8 +50,7 @@ function collect_jobs(category, country, state, category, url) {
       
       res.body['jobs_results'].forEach(async (job) => {
 
-        // Verificar outros paises também, não apenas o Brasil.
-        if (!((/Qualquer lugar|Anywhere|Brasil/).test(job.location) || (job.location == state.name) || (!job.location || job.location.length === 0 ) )) {
+        if (!((/Qualquer lugar|Anywhere/).test(job.location) || (job.location == state.name) || (!job.location || job.location.length === 0 ) )) {
           if ((/hora|hour|minuto|minute|dia|day|día/).test(job.detected_extensions.posted_at)) {
 
             let posted_at = job.detected_extensions.posted_at;
@@ -141,16 +129,13 @@ function collect_jobs(category, country, state, category, url) {
                 debugger
               }
             } else {
-              const upsertCitiesNotFound = await prisma.cities_not_found.upsert({
-                where: {
-                },
-                update: {},                
-                create: {
+              const createCityNotFound = await prisma.cities_not_found.create({ 
+                data: {
                   state_id: state.id,
                   name: job.location, 
-                  created_at: moment().format()
-                },
-              });               
+                  created_at: moment().format()                    
+                } 
+              });            
             }
           }
         }

@@ -7,7 +7,7 @@ const moment = require('moment');
 const states = [];
 const SPECIAL_KEY_TABLE = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_'
 
-fs.createReadStream('seeds/states.csv')
+fs.createReadStream('seeds/csv/states.csv')
   .on('error', () => {
   })
 

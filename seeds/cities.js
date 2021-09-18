@@ -7,7 +7,7 @@ const slug = require('slug');
 
 const cities = [];
 
-fs.createReadStream('seeds/cities.csv')
+fs.createReadStream('seeds/csv/cities.csv')
   .on('error', () => {
   })
 
