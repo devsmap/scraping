@@ -1,5 +1,4 @@
 const dLoop = require('delayed-loop');
-const accents = require('remove-accents');
 const moment = require('moment');
 const slug = require('slug');
 const got = require('got');
@@ -60,7 +59,6 @@ function collect_jobs(category, country, state, category, url) {
               return;
             }
 
-            // Criar indice para unaccent(name) 
             let city_name_slug = slug(state.id+"-"+job.location.replaceAll(/[^A-Za-z]/g, ' ').split('  ')[0]);
             let cities = await prisma.$queryRaw`SELECT id FROM cities WHERE slug = ${city_name_slug}`;
             
