@@ -28,6 +28,37 @@ model categories {
   @@index([parent_id], map: "index_categories_on_parent_id")
 }
 
+model countries {
+  id           BigInt   @id @default(autoincrement())
+  is_active    Boolean? @default(false)
+  is_collected Boolean? @default(false)
+  name         String   @unique(map: "index_countries_on_name") @db.VarChar
+  region       String   @db.VarChar
+  subregion    String   @db.VarChar
+  google_uule  String   @db.VarChar
+  google_gl    String   @db.VarChar
+  google_hl    String?  @db.VarChar
+  created_at   DateTime @db.Timestamp(6)
+  updated_at   DateTime @db.Timestamp(6)
+  states       states[]
+}
+
+model states {
+  id           BigInt    @id @default(autoincrement())
+  country_id   BigInt
+  is_active    Boolean?  @default(false)
+  is_collected Boolean?  @default(false)
+  name         String    @db.VarChar
+  google_uule  String    @db.VarChar
+  created_at   DateTime  @db.Timestamp(6)
+  updated_at   DateTime  @db.Timestamp(6)
+  countries    countries @relation(fields: [country_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_rails_40bd891262")
+  cities       cities[]
+
+  @@index([country_id], map: "index_states_on_country_id")
+  @@index([name], map: "index_states_on_name")
+}
+
 model cities {
   id         BigInt   @id @default(autoincrement())
   state_id   BigInt
@@ -35,6 +66,7 @@ model cities {
   is_active  Boolean? @default(true)
   latitude   String   @db.VarChar
   longitude  String   @db.VarChar
+  slug       String?  @unique(map: "index_cities_on_slug") @db.VarChar
   created_at DateTime @db.Timestamp(6)
   updated_at DateTime @db.Timestamp(6)
   states     states   @relation(fields: [state_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_rails_59b5e22e07")
@@ -48,6 +80,7 @@ model cities_not_found {
   id         BigInt   @id @default(autoincrement())
   state_id   BigInt
   name       String   @db.VarChar
+  created_at DateTime @db.Timestamp(6)
 
   @@index([name], map: "index_cities_not_found_on_name")
   @@index([state_id], map: "index_cities_not_found_on_state_id")
@@ -63,21 +96,6 @@ model companies {
   updated_at  DateTime  @db.Timestamp(6)
   deleted_at  DateTime? @db.Timestamp(6)
   jobs        jobs[]
-}
-
-model countries {
-  id           BigInt   @id @default(autoincrement())
-  is_active    Boolean? @default(false)
-  is_collected Boolean? @default(false)
-  name         String   @unique(map: "index_countries_on_name") @db.VarChar
-  region       String   @db.VarChar
-  subregion    String   @db.VarChar
-  google_uule  String   @db.VarChar
-  google_gl    String   @db.VarChar
-  google_hl    String?  @db.VarChar
-  created_at   DateTime @db.Timestamp(6)
-  updated_at   DateTime @db.Timestamp(6)
-  states       states[]
 }
 
 model employees {
@@ -131,21 +149,4 @@ model schema_migrations {
   version String @id @db.VarChar
 }
 
-model states {
-  id           BigInt    @id @default(autoincrement())
-  country_id   BigInt
-  is_active    Boolean?  @default(false)
-  is_collected Boolean?  @default(false)
-  name         String    @db.VarChar
-  state_code   String    @db.VarChar
-  latitude     String    @db.VarChar
-  longitude    String    @db.VarChar
-  google_uule  String    @db.VarChar
-  created_at   DateTime  @db.Timestamp(6)
-  updated_at   DateTime  @db.Timestamp(6)
-  countries    countries @relation(fields: [country_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_rails_40bd891262")
-  cities       cities[]
 
-  @@index([country_id], map: "index_states_on_country_id")
-  @@index([name], map: "index_states_on_name")
-}

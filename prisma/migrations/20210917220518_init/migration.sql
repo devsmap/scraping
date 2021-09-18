@@ -13,7 +13,6 @@ CREATE TABLE "categories" (
     "id" BIGSERIAL NOT NULL,
     "name" VARCHAR NOT NULL,
     "parent_id" BIGINT,
-    "icon" VARCHAR,
     "is_active" BOOLEAN DEFAULT false,
     "created_at" TIMESTAMP(6) NOT NULL,
     "updated_at" TIMESTAMP(6) NOT NULL,
@@ -33,6 +32,15 @@ CREATE TABLE "cities" (
     "updated_at" TIMESTAMP(6) NOT NULL,
 
     CONSTRAINT "cities_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "cities_not_found" (
+    "id" BIGSERIAL NOT NULL,
+    "state_id" BIGINT NOT NULL,
+    "name" VARCHAR NOT NULL,
+
+    CONSTRAINT "cities_not_found_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
@@ -56,13 +64,9 @@ CREATE TABLE "countries" (
     "name" VARCHAR NOT NULL,
     "region" VARCHAR NOT NULL,
     "subregion" VARCHAR NOT NULL,
-    "latitude" VARCHAR NOT NULL,
-    "longitude" VARCHAR NOT NULL,
-    "emoji" VARCHAR NOT NULL,
     "google_uule" VARCHAR NOT NULL,
     "google_gl" VARCHAR NOT NULL,
     "google_hl" VARCHAR,
-    "time_zone" VARCHAR,
     "created_at" TIMESTAMP(6) NOT NULL,
     "updated_at" TIMESTAMP(6) NOT NULL,
 
@@ -91,29 +95,6 @@ CREATE TABLE "employees" (
     "updated_at" TIMESTAMP(6) NOT NULL,
 
     CONSTRAINT "employees_pkey" PRIMARY KEY ("id")
-);
-
--- CreateTable
-CREATE TABLE "google" (
-    "id" BIGSERIAL NOT NULL,
-    "category_id" BIGINT NOT NULL,
-    "state_id" BIGINT NOT NULL,
-    "is_detailed" BOOLEAN DEFAULT false,
-    "job_id" VARCHAR,
-    "title" VARCHAR,
-    "company" VARCHAR,
-    "city" VARCHAR,
-    "via" VARCHAR,
-    "published_at" VARCHAR,
-    "description" TEXT,
-    "link" VARCHAR,
-    "token" VARCHAR,
-    "created_at" TIMESTAMP(6) NOT NULL,
-    "updated_at" TIMESTAMP(6) NOT NULL,
-    "deleted_at" TIMESTAMP(6),
-    "deleted_reason" VARCHAR,
-
-    CONSTRAINT "google_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
@@ -175,6 +156,12 @@ CREATE INDEX "index_cities_on_name" ON "cities"("name");
 CREATE INDEX "index_cities_on_state_id" ON "cities"("state_id");
 
 -- CreateIndex
+CREATE INDEX "index_cities_not_found_on_name" ON "cities_not_found"("name");
+
+-- CreateIndex
+CREATE INDEX "index_cities_not_found_on_state_id" ON "cities_not_found"("state_id");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "index_companies_on_slug" ON "companies"("slug");
 
 -- CreateIndex
@@ -188,15 +175,6 @@ CREATE UNIQUE INDEX "index_employees_on_reset_password_token" ON "employees"("re
 
 -- CreateIndex
 CREATE UNIQUE INDEX "index_employees_on_confirmation_token" ON "employees"("confirmation_token");
-
--- CreateIndex
-CREATE UNIQUE INDEX "index_google_on_job_id" ON "google"("job_id");
-
--- CreateIndex
-CREATE INDEX "index_google_on_category_id" ON "google"("category_id");
-
--- CreateIndex
-CREATE INDEX "index_google_on_state_id" ON "google"("state_id");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "index_jobs_on_gogole_job_id" ON "jobs"("gogole_job_id");
@@ -221,12 +199,6 @@ ALTER TABLE "categories" ADD CONSTRAINT "fk_rails_82f48f7407" FOREIGN KEY ("pare
 
 -- AddForeignKey
 ALTER TABLE "cities" ADD CONSTRAINT "fk_rails_59b5e22e07" FOREIGN KEY ("state_id") REFERENCES "states"("id") ON DELETE NO ACTION ON UPDATE NO ACTION;
-
--- AddForeignKey
-ALTER TABLE "google" ADD CONSTRAINT "fk_rails_0ee3951340" FOREIGN KEY ("category_id") REFERENCES "categories"("id") ON DELETE NO ACTION ON UPDATE NO ACTION;
-
--- AddForeignKey
-ALTER TABLE "google" ADD CONSTRAINT "fk_rails_a7a4f93b9f" FOREIGN KEY ("state_id") REFERENCES "states"("id") ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- AddForeignKey
 ALTER TABLE "jobs" ADD CONSTRAINT "fk_rails_1cf0b3b406" FOREIGN KEY ("category_id") REFERENCES "categories"("id") ON DELETE NO ACTION ON UPDATE NO ACTION;

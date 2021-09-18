@@ -21,16 +21,15 @@ const prisma = new PrismaClient();
 
   const countries = await prisma.countries.findMany({ where: { is_collected: true } });
   countries.forEach(async (country) => {
-    const states = await prisma.states.findMany({ where: { country_id: country.id, is_collected: true }, include: { cities: true } });
+    const states = await prisma.states.findMany({ where: { country_id: parseInt(country.id), is_collected: true }, include: { cities: true } });
     const categories = await prisma.categories.findMany({ where: { parent_id: null, is_active: true } });
-
     states.forEach(async (state, index) => {
-
       setTimeout(() => {
 
-        categories.forEach(async (category) => {                  
+        categories.forEach(async (category) => {               
           let url  = build_url(category, state, country);
-          let jobs = collect_jobs(category, country, state, category, url);
+          
+          collect_jobs(category, country, state, category, url);
         });
 
       }, 2000 * index);
@@ -74,8 +73,8 @@ function collect_jobs(category, country, state, category, url) {
             }
 
             // Criar indice para unaccent(name) 
-            let city_name_format = accents.remove(job.location).replaceAll(/[^A-Za-z]/g, ' ').split('  ')[0];
-            let cities = await prisma.$queryRaw`SELECT id FROM cities WHERE unaccent(name) = ${city_name_format}`;
+            let city_name_slug = slug(state.id+"-"+job.location.replaceAll(/[^A-Za-z]/g, ' ').split('  ')[0]);
+            let cities = await prisma.$queryRaw`SELECT id FROM cities WHERE slug = ${city_name_slug}`;
             
             if ((cities.length) > 0) {
 
@@ -143,6 +142,9 @@ function collect_jobs(category, country, state, category, url) {
               }
             } else {
               const upsertCitiesNotFound = await prisma.cities_not_found.upsert({
+                where: {
+                },
+                update: {},                
                 create: {
                   state_id: state.id,
                   name: job.location, 

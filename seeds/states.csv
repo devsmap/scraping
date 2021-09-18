@@ -1,343 +1,83 @@
-﻿state_id;state_name;;country_id
-000071;New Mexico;000071;009
-000052;California;000052;009
-000050;Alaska;000050;009
-000079;Texas;000079;009
-000055;Georgia;000055;009
-000053;Colorado;000053;009
-000079;Texas;000079;009
-000052;California;000052;009
-000063;Maryland;000063;009
-000062;Louisiana;000062;009
-000049;Alabama;000049;009
-000057;Idaho;000057;009
-000064;Massachusetts;000064;009
-000072;New York;000072;009
-000051;Arizona;000051;009
-000073;North Carolina;000073;009
-000080;Virginia;000080;009
-000058;Illinois;000058;009
-000052;California;000052;009
-000074;Ohio;000074;009
-000074;Ohio;000074;009
-000053;Colorado;000053;009
-000074;Ohio;000074;009
-000079;Texas;000079;009
-000079;Texas;000079;009
-000053;Colorado;000053;009
-000065;Michigan;000065;009
-000073;North Carolina;000073;009
-000079;Texas;000079;009
-000059;Indiana;000059;009
-000079;Texas;000079;009
-000052;California;000052;009
-000052;California;000052;009
-000079;Texas;000079;009
-000051;Arizona;000051;009
-000051;Arizona;000051;009
-000073;North Carolina;000073;009
-000069;Nevada;000069;009
-000054;Florida;000054;009
-000056;Hawaii;000056;009
-000079;Texas;000079;009
-000059;Indiana;000059;009
-000052;California;000052;009
-000079;Texas;000079;009
-000054;Florida;000054;009
-000070;New Jersey;000070;009
-000067;Missouri;000067;009
-000079;Texas;000079;009
-000069;Nevada;000069;009
-000061;Kentucky;000061;009
-000068;Nebraska;000068;009
-000052;California;000052;009
-000052;California;000052;009
-000061;Kentucky;000061;009
-000079;Texas;000079;009
-000082;Wisconsin;000082;009
-000078;Tennessee;000078;009
-000051;Arizona;000051;009
-000054;Florida;000054;009
-000082;Wisconsin;000082;009
-000066;Minnesota;000066;009
-000078;Tennessee;000078;009
-000062;Louisiana;000062;009
-000072;New York;000072;009
-000070;New Jersey;000070;009
-000080;Virginia;000080;009
-000069;Nevada;000069;009
-000052;California;000052;009
-000075;Oklahoma;000075;009
-000068;Nebraska;000068;009
-000054;Florida;000054;009
-000077;Pennsylvania;000077;009
-000051;Arizona;000051;009
-000077;Pennsylvania;000077;009
-000079;Texas;000079;009
-000076;Oregon;000076;009
-000073;North Carolina;000073;009
-000069;Nevada;000069;009
-000080;Virginia;000080;009
-000052;California;000052;009
-000052;California;000052;009
-000079;Texas;000079;009
-000052;California;000052;009
-000052;California;000052;009
-000052;California;000052;009
-000052;California;000052;009
-000052;California;000052;009
-000051;Arizona;000051;009
-000081;Washington;000081;009
-000067;Missouri;000067;009
-000066;Minnesota;000066;009
-000054;Florida;000054;009
-000052;California;000052;009
-000054;Florida;000054;009
-000074;Ohio;000074;009
-000051;Arizona;000051;009
-000075;Oklahoma;000075;009
-000080;Virginia;000080;009
-000060;Kansas;000060;009
-000073;North Carolina;000073;009
-000001;Acre;000001;001
-000002;Alagoas;000002;001
-000002;Alagoas;000002;001
-000003;Amapá;000003;001
-000004;Amazonas;000004;001
-000005;Bahia;000005;001
-000005;Bahia;000005;001
-000005;Bahia;000005;001
-000005;Bahia;000005;001
-000005;Bahia;000005;001
-000005;Bahia;000005;001
-000005;Bahia;000005;001
-000005;Bahia;000005;001
-000005;Bahia;000005;001
-000005;Bahia;000005;001
-000005;Bahia;000005;001
-000005;Bahia;000005;001
-000005;Bahia;000005;001
-000006;Ceará;000006;001
-000006;Ceará;000006;001
-000006;Ceará;000006;001
-000006;Ceará;000006;001
-000006;Ceará;000006;001
-000007;Distrito Federal;000007;001
-000008;Espírito Santo;000008;001
-000008;Espírito Santo;000008;001
-000008;Espírito Santo;000008;001
-000008;Espírito Santo;000008;001
-000008;Espírito Santo;000008;001
-000008;Espírito Santo;000008;001
-000009;Goiás;000009;001
-000009;Goiás;000009;001
-000009;Goiás;000009;001
-000009;Goiás;000009;001
-000009;Goiás;000009;001
-000009;Goiás;000009;001
-000009;Goiás;000009;001
-000010;Maranhão;000010;001
-000010;Maranhão;000010;001
-000010;Maranhão;000010;001
-000010;Maranhão;000010;001
-000010;Maranhão;000010;001
-000011;Mato Grosso;000011;001
-000011;Mato Grosso;000011;001
-000011;Mato Grosso;000011;001
-000012;Mato Grosso do Sul;000012;001
-000012;Mato Grosso do Sul;000012;001
-000013;Minas Gerais;000013;001
-000013;Minas Gerais;000013;001
-000013;Minas Gerais;000013;001
-000013;Minas Gerais;000013;001
-000013;Minas Gerais;000013;001
-000013;Minas Gerais;000013;001
-000013;Minas Gerais;000013;001
-000013;Minas Gerais;000013;001
-000013;Minas Gerais;000013;001
-000013;Minas Gerais;000013;001
-000013;Minas Gerais;000013;001
-000013;Minas Gerais;000013;001
-000013;Minas Gerais;000013;001
-000013;Minas Gerais;000013;001
-000013;Minas Gerais;000013;001
-000013;Minas Gerais;000013;001
-000013;Minas Gerais;000013;001
-000014;Pará;000014;001
-000014;Pará;000014;001
-000014;Pará;000014;001
-000014;Pará;000014;001
-000014;Pará;000014;001
-000014;Pará;000014;001
-000014;Pará;000014;001
-000015;Paraíba;000015;001
-000015;Paraíba;000015;001
-000016;Paraná;000016;001
-000016;Paraná;000016;001
-000016;Paraná;000016;001
-000016;Paraná;000016;001
-000016;Paraná;000016;001
-000016;Paraná;000016;001
-000016;Paraná;000016;001
-000016;Paraná;000016;007
-000016;Paraná;000016;001
-000016;Paraná;000016;001
-000017;Pernambuco;000017;001
-000017;Pernambuco;000017;001
-000017;Pernambuco;000017;001
-000017;Pernambuco;000017;001
-000017;Pernambuco;000017;001
-000017;Pernambuco;000017;001
-000017;Pernambuco;000017;001
-000017;Pernambuco;000017;001
-000018;Piauí;000018;001
-000018;Piauí;000018;001
-000019;Rio de Janeiro;000019;001
-000019;Rio de Janeiro;000019;001
-000019;Rio de Janeiro;000019;001
-000019;Rio de Janeiro;000019;001
-000019;Rio de Janeiro;000019;001
-000019;Rio de Janeiro;000019;001
-000019;Rio de Janeiro;000019;001
-000019;Rio de Janeiro;000019;001
-000019;Rio de Janeiro;000019;001
-000019;Rio de Janeiro;000019;001
-000019;Rio de Janeiro;000019;001
-000019;Rio de Janeiro;000019;001
-000019;Rio de Janeiro;000019;001
-000019;Rio de Janeiro;000019;001
-000019;Rio de Janeiro;000019;001
-000019;Rio de Janeiro;000019;001
-000019;Rio de Janeiro;000019;001
-000019;Rio de Janeiro;000019;001
-000019;Rio de Janeiro;000019;001
-000019;Rio de Janeiro;000019;001
-000019;Rio de Janeiro;000019;001
-000019;Rio de Janeiro;000019;001
-000020;Rio Grande do Norte;000020;001
-000020;Rio Grande do Norte;000020;001
-000020;Rio Grande do Norte;000020;001
-000021;Rio Grande do Sul;000021;001
-000021;Rio Grande do Sul;000021;001
-000021;Rio Grande do Sul;000021;001
-000021;Rio Grande do Sul;000021;001
-000021;Rio Grande do Sul;000021;001
-000021;Rio Grande do Sul;000021;001
-000021;Rio Grande do Sul;000021;001
-000021;Rio Grande do Sul;000021;001
-000021;Rio Grande do Sul;000021;001
-000021;Rio Grande do Sul;000021;001
-000021;Rio Grande do Sul;000021;001
-000021;Rio Grande do Sul;000021;001
-000022;Rondônia;000022;001
-000023;Roraima;000023;001
-000024;Santa Catarina;000024;001
-000024;Santa Catarina;000024;001
-000024;Santa Catarina;000024;001
-000024;Santa Catarina;000024;001
-000024;Santa Catarina;000024;001
-000024;Santa Catarina;000024;001
-000024;Santa Catarina;000024;001
-000024;Santa Catarina;000024;001
-000024;Santa Catarina;000024;001
-000024;Santa Catarina;000024;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000025;São Paulo;000025;001
-000026;Sergipe;000026;001
-000026;Sergipe;000026;001
-000027;Tocantins;000027;001
-000027;Tocantins;000027;001
-000031;Ontario;000031;002
-000031;Ontario;000031;002
-000029;British Columbia;000029;002
-000031;Ontario;000031;002
-000032;Quebec;000032;002
-000028;Alberta;000028;002
-000029;British Columbia;000029;002
-000030;Nova Scotia;000030;002
-000032;Quebec;000032;002
-000031;Ontario;000031;002
-000048;Dublin;000048;005
-000047;Cork;000047;005
-000034;Bavaria;000034;004
-000034;Bavaria;000034;004
-000033;Baden-Württemberg;000033;004
-000037;North Rhine-Westphalia;000037;004
-000033;Baden-Württemberg;000033;004
-000037;North Rhine-Westphalia;000037;004
-000034;Bavaria;000034;004
-000036;Hamburg;000036;004
-000033;Baden-Württemberg;000033;004
-000033;Baden-Württemberg;000033;004
-000037;North Rhine-Westphalia;000037;004
-000034;Bavaria;000034;004
-000037;North Rhine-Westphalia;000037;004
-000038;Saxony;000038;004
-000038;Saxony;000038;004
-000035;Berlin;000035;004
-000039;Hauts-de-France;000039;003
-000040;Nouvelle-Aquitaine;000040;003
-000041;England;000041;008
-000041;England;000041;008
-000041;England;000041;008
-000043;Scotland;000043;008
-000041;England;000041;008
-000041;England;000041;009
-000041;England;000041;008
-000042;Northern Ireland;000042;008
-000045;Lisbon;000045;006
-000045;Lisbon;000045;006
-000046;Porto;000046;006
-000044;Braga;000044;006
+﻿blanck;state_name;state_id;country_id;country_name
+blanck;North Carolina;73;9;United States
+blanck;Kansas;60;9;United States
+blanck;Rio de Janeiro;19;1;Brazil
+blanck;Bahia;5;1;Brazil
+blanck;Espírito Santo;8;1;Brazil
+blanck;Virginia;80;9;United States
+blanck;British Columbia;29;2;Canada
+blanck;Rio Grande do Sul;21;1;Brazil
+blanck;Mato Grosso;11;1;Brazil
+blanck;Goiás;9;1;Brazil
+blanck;Baden-Württemberg;33;4;Germany
+blanck;Minas Gerais;13;1;Brazil
+blanck;Oklahoma;75;9;United States
+blanck;Arizona;51;9;United States
+blanck;Ontario;31;2;Canada
+blanck;Ohio;74;9;United States
+blanck;Maranhão;10;1;Brazil
+blanck;Piauí;18;1;Brazil
+blanck;São Paulo;25;1;Brazil
+blanck;Florida;54;9;United States
+blanck;California;52;9;United States
+blanck;Missouri;67;9;United States
+blanck;Ceará;6;1;Brazil
+blanck;Washington;81;9;United States
+blanck;Pernambuco;17;1;Brazil
+blanck;Paraná;16;1;Brazil
+blanck;Santa Catarina;24;1;Brazil
+blanck;Pará;14;1;Brazil
+blanck;Texas;79;9;United States
+blanck;Minnesota;66;9;United States
+blanck;Acre;1;1;Brazil
+blanck;Nevada;69;9;United States
+blanck;Bavaria;34;4;Germany
+blanck;Quebec;32;2;Canada
+blanck;Rondônia;22;1;Brazil
+blanck;Porto;46;6;Portugal
+blanck;Oregon;76;9;United States
+blanck;Pennsylvania;77;9;United States
+blanck;Rio Grande do Norte;20;1;Brazil
+blanck;Tocantins;27;1;Brazil
+blanck;Nebraska;68;9;United States
+blanck;Sergipe;26;1;Brazil
+blanck;New Jersey;70;9;United States
+blanck;New York;72;9;United States
+blanck;Louisiana;62;9;United States
+blanck;Tennessee;78;9;United States
+blanck;North Rhine-Westphalia;37;4;Germany
+blanck;Wisconsin;82;9;United States
+blanck;England;41;8;United Kingdom
+blanck;Amazonas;4;1;Brazil
+blanck;Alagoas;2;1;Brazil
+blanck;Amapá;3;1;Brazil
+blanck;Kentucky;61;9;United States
+blanck;Lisbon;45;6;Portugal
+blanck;Hauts-de-France;39;3;France
+blanck;Saxony;38;4;Germany
+blanck;Indiana;59;9;United States
+blanck;Hawaii;56;9;United States
+blanck;Hamburg;36;4;Germany
+blanck;Nova Scotia;30;2;Canada
+blanck;Scotland;43;8;United Kingdom
+blanck;Dublin;48;5;Ireland
+blanck;Mato Grosso do Sul;12;1;Brazil
+blanck;Michigan;65;9;United States
+blanck;Colorado;53;9;United States
+blanck;Paraíba;15;1;Brazil
+blanck;Cork;47;5;Ireland
+blanck;Illinois;58;9;United States
+blanck;Alberta;28;2;Canada
+blanck;Distrito Federal;7;1;Brazil
+blanck;Braga;44;6;Portugal
+blanck;Massachusetts;64;9;United States
+blanck;Nouvelle-Aquitaine;40;3;France
+blanck;Idaho;57;9;United States
+blanck;Roraima;23;1;Brazil
+blanck;Alabama;49;9;United States
+blanck;Berlin;35;4;Germany
+blanck;Northern Ireland;42;8;United Kingdom
+blanck;Maryland;63;9;United States
+blanck;Georgia;55;9;United States
+blanck;Alaska;50;9;United States
+blanck;New Mexico;71;9;United States
